@@ -31,11 +31,23 @@ For the second board displayed above, the representation is Board = [1,3,5,7,2,0
  
 #### Solution Implementation
 
-##### Entity representation in the context of Genetic Algorithm
+##### Entity representations in the context of Genetic Algorithm
 
-######1. Individual Members
+1. Board
 
-Each arrangement of the Eight queens in a board is represented by a class called Board 
+An arrangement of 8 queens on a board. Each individual is implemented as a class "Board" 
+    Attributes: 
+
+
+2. Population
+    Attributes
+
+A Population is a list of individuals (Boards in this implementation)  and is called "Population" in this context
+
+3. Evolution
+
+A Population is a list of individuals (Boards in this implementation) 
+
     Board class has the following attributes:
         
         positions  --> the representation list as mentioned above
