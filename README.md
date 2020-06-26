@@ -7,14 +7,9 @@
 #### Problem Statement
 Find a solution of the Eight Queens problem with optimization using Genetic Algorithm.
 
-Following is a sample configuration where we have attacking queens:
-![image.png](attachment:image.png)
+Following are sample configurations - 
+![Examples of arrangements](attachment:boards_examples.png)
 
-
-
-Following is a sample solution of the problem where no queens are attacking each other:
-
-![image.png](attachment:image.png)
 
 #### Problem Formulation
 The arrangement of the Eight Queens on a chessboard is a list of 8 integers, all between 0 and 7 both inclusive.
