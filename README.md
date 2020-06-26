@@ -8,7 +8,8 @@
 Find a solution of the Eight Queens problem with optimization using Genetic Algorithm.
 
 Following are sample configurations - 
-![Examples of arrangements](attachment:boards_examples.png)
+
+![Examples of arrangements](attachment:https://github.com/jchowdhury82/DataScienceSummitCognizant/blob/master/boards_examples.png)
 
 
 #### Problem Formulation
@@ -28,20 +29,20 @@ For the second board displayed above, the representation is Board = [1,3,5,7,2,0
 
 ##### Entity representations in the context of Genetic Algorithm
 
-1. Board
+1. ###### Board
 
-An arrangement of 8 queens on a board. Each individual is implemented as a class "Board" 
-    Attributes: 
+   An arrangement of 8 queens on a board. This is equivalent to an Individual (or a Gene) in Genetic Algorithm 
+    
+   Attributes: 
 
 
-2. Population
-    Attributes
+2. ###### Population
+    
+   A Population is a list of arrangements (Boards).  This is equivalent to Population in Genetic Algorithm  
 
-A Population is a list of individuals (Boards in this implementation)  and is called "Population" in this context
+3. ###### Evolution
 
-3. Evolution
-
-A Population is a list of individuals (Boards in this implementation) 
+   Evolution is a driver class which runs the entire Genetic Algorithm Flow 
 
     Board class has the following attributes:
         
