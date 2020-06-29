@@ -38,7 +38,9 @@ Index : 4  --> Board: 6,5,2,1,7,4,0,3 --> Attacking Queens Count: 5
     
    Attributes: 
         `positions  --> the representation list as mentioned above implemented as a List.`
+        
         `attackingqueens --> list of positions of queens which are attacking  implemented as a List.`
+        
         `attackcount --> the number of queens that are attacking another queens. This will serve as a fitness indicator. For any solution of the problem, the attackcount = 0.`
 
 2. **Population
