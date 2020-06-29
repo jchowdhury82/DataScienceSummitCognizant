@@ -99,7 +99,7 @@ Index : 4  --> Board: 6,5,2,1,7,4,0,3 --> Attacking Queens Count: 5
       
   Example of the matrix multiplication apprach on q = [0,6,3,7,1,4,2,5]
   
-      ![Alt Text](/attack_logic.png)
+  ![Alt Text](/attack_logic.png)
       
       
 ## Evolution Process
