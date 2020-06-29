@@ -1,10 +1,10 @@
-## Eight Queens Problem Optimization with Genetic Algorithm approach
+# Eight Queens Problem Optimization with Genetic Algorithm approach
 
-### Cognizant Data Science Summit 2020
-### Author - Joyjit Chowdhury 
+** Cognizant Data Science Summit 2020 **
+** Author - Joyjit Chowdhury ** 
 
 
-#### Problem Statement
+### Problem Statement
 Find a solution of the Eight Queens problem with optimization using Genetic Algorithm.
 
 Following are sample configurations - 
@@ -12,7 +12,7 @@ Following are sample configurations -
 ![Alt Text](/boards_examples.png)
 
 
-#### Problem Formulation
+### Problem Formulation
 The arrangement of the Eight Queens on a chessboard is a list of 8 integers, all between 0 and 7 both inclusive.
 The arragement is called Board in this implementation:
 
