@@ -32,7 +32,7 @@ Index : 4  --> Board: 6,5,2,1,7,4,0,3 --> Attacking Queens Count: 5
 
 ### Entity representations in the context of Genetic Algorithm
 
-1. **Board
+1. **Board**
 
    An arrangement of 8 queens on a board. This is equivalent to an Individual (or a Gene) in Genetic Algorithm 
     
@@ -41,7 +41,7 @@ Index : 4  --> Board: 6,5,2,1,7,4,0,3 --> Attacking Queens Count: 5
         attackingqueens --> list of positions of queens which are attacking  implemented as a List.        
         attackcount --> the number of queens that are attacking another queens. This will serve as a fitness indicator. For any solution of the problem, the attackcount = 0.
 
-2. **Population
+2. **Population**
     
    A Population is a list of arrangements (Boards).  This is equivalent to Population in Genetic Algorithm . Implemented as a list of Board objects.
 
@@ -51,7 +51,7 @@ Index : 4  --> Board: 6,5,2,1,7,4,0,3 --> Attacking Queens Count: 5
         fitnessscore --> an overall fitness score of the population - implemented as the minimum value of the number of attacking queens among all the boards
 
 
-3. **Generation
+3. **Generation**
 
    Generation is a driver class which runs the steps of the Genetic Algorithm Flow 
               This class has the methods for each step in a Genetic Algorithm
