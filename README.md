@@ -37,20 +37,18 @@ Index : 4  --> Board: 6,5,2,1,7,4,0,3 --> Attacking Queens Count: 5
    An arrangement of 8 queens on a board. This is equivalent to an Individual (or a Gene) in Genetic Algorithm 
     
    Attributes: 
-        `positions  --> the representation list as mentioned above implemented as a List.`
-        
-        `attackingqueens --> list of positions of queens which are attacking  implemented as a List.`
-        
-        `attackcount --> the number of queens that are attacking another queens. This will serve as a fitness indicator. For any solution of the problem, the attackcount = 0.`
+        positions  --> the representation list as mentioned above implemented as a List.        
+        attackingqueens --> list of positions of queens which are attacking  implemented as a List.        
+        attackcount --> the number of queens that are attacking another queens. This will serve as a fitness indicator. For any solution of the problem, the attackcount = 0.
 
 2. **Population
     
    A Population is a list of arrangements (Boards).  This is equivalent to Population in Genetic Algorithm . Implemented as a list of Board objects.
 
    Attributes: 
-        `size -->  number of boards in the population`
-        `population --> a collection of boards, each board representing an arrangement of eight queens`
-        `fitnessscore --> an overall fitness score of the population - implemented as the minimum value of the number of attacking queens among all the boards`
+        size -->  number of boards in the population
+        population --> a collection of boards, each board representing an arrangement of eight queens
+        fitnessscore --> an overall fitness score of the population - implemented as the minimum value of the number of attacking queens among all the boards
 
 
 3. **Generation
@@ -69,12 +67,62 @@ Index : 4  --> Board: 6,5,2,1,7,4,0,3 --> Attacking Queens Count: 5
               Step 7 - EVOLVE - update the weakest individuals (last two boards) with the two children generated in step 6
                        if the fitness score (attackscore) of the children are better (lower) than the weakest individuals
               
- Attributes:  
-      `genpopulation - A population of the generation`
-      `generation - A state of the population in the genetic algorithm cycle. Represented as a number. Initial gen = 1
+   Attributes:  
+      genpopulation - A population of the generation
+      generation - A state of the population in the genetic algorithm cycle. Represented as a number. Initial gen = 1
                     attacking queens among all the boards. If a fitnessscore = 0 for a population, it implies at 
-                    least one solution is found`
-      `fittestparent1 - a Board object in the population which has the lowest value of attack score. Considered to be fittest parent`
-      `fittestparent2 - a Board object in the population which has the 2nd lowest value of attack score. Considered to be second fittest parent`
+                    least one solution is found
+      fittestparent1 - a Board object in the population which has the lowest value of attack score. Considered to be fittest parent
+      fittestparent2 - a Board object in the population which has the 2nd lowest value of attack score. Considered to be second fittest parent
         
-        
+
+### Logic of determining attacks using native Numpy Matrix Operations ( WITHOUT USING FOR LOOPS )
+
+   Basic logic :  Any two queens q[i] and q[j] in positions i and j  (q[i] != q[j], meaning they are not on same row) attack each other if 
+                       abs(q[i] - q[j]) = abs (i - j)   where abs is the absolute value function
+                  In other words, two queens attack each other if the difference in their row positions is same as the difference in their column positions.
+    
+   The for loop way:
+   
+      for i in 0:7
+         for j in 0:7
+            attack[i,j] = 1 if abs(q[i] - q[j]) = abs (i - j) and i!=j else 0
+            
+    
+   Use of numpy native matrix multiplication to determine attacking queens:
+   
+      rowdist = abs(np.tile(q,(8,1)) - np.tile(q).transpose())   # row distances of queens from each other
+      indexdist = abs(np.tile(range(8),(8,1)) - np.tile(range(8),(8,1)).transpose())  # column distances of queens from each other
+      attackmatrix = (rowdist == indexdist)   # attack is true when rowdist = columndist
+      attackmatrix = attackmatrix.astype(int) * np.invert(np.identity(8,dtype = bool)).astype(int)   # ignore attack on itself 
+      attackvector = np.dot(attackmatrix,np.ones(8, dtype = int))
+      
+  Example of the matrix multiplication apprach on q = [0,6,3,7,1,4,2,5]
+  
+      ![Alt Text](/attack_logic.png)
+      
+      
+## Evolution Process
+
+   The evolution process executes all the steps of the genetic algorithm and returns a generation object for which a solution is found ie. the fittest parent has score 0.
+   
+            initializegeneration()
+            while True:                
+                selectfittest()
+                crossover(crosspoint = crosspoint)
+                mutate(mutationrate = mutationrate)
+                merge()
+                if population.fitnessscore == 0:  
+                    # solution is found, return the current generation
+                    selectfittest()
+                    return self               
+                if generation == maxgenerations:
+                    # No solution is found in the maximum allowed generations
+                    return None   
+                    
+                    
+## Assumptions
+
+1. The population initialization is not entirely random but a permutation of integers between 0 to 7. No numbers are repeated.
+2. Fitness of a generation is done using rank based on number of attacking queens. The board with the lowest number of attacking queens gets the highest rank.
+3. Crossover point, mutation rate, population size and number of maximum generations are inputs to the problem. 
