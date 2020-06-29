@@ -9,7 +9,7 @@ Find a solution of the Eight Queens problem with optimization using Genetic Algo
 
 Following are sample configurations - 
 
-![Alt Text](/boards_examples.png)
+
 
 
 ### Problem Formulation
