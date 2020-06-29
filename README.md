@@ -21,12 +21,12 @@ Each index ( 0 to 7 ) in this list represents a column of the chess board.
 Each value in the list q[i]  at index [i]  represents the row in the chessboard where queen q[i] is placed in column [i]
 
 Examples of board represenations in the figure shown above : 
-
-Index : 0  --> Board: 2,4,7,3,0,6,1,5 --> Attacking Queens Count: 0
-Index : 1  --> Board: 6,7,4,1,5,0,2,3 --> Attacking Queens Count: 5
-Index : 2  --> Board: 0,6,2,7,1,4,3,5 --> Attacking Queens Count: 5
-Index : 3  --> Board: 3,6,4,5,1,0,2,7 --> Attacking Queens Count: 5
-Index : 4  --> Board: 6,5,2,1,7,4,0,3 --> Attacking Queens Count: 5
+   
+   `Index : 0  --> Board: 2,4,7,3,0,6,1,5 --> Attacking Queens Count: 0`
+   `Index : 1  --> Board: 6,7,4,1,5,0,2,3 --> Attacking Queens Count: 5`
+   `Index : 2  --> Board: 0,6,2,7,1,4,3,5 --> Attacking Queens Count: 5`
+   `Index : 3  --> Board: 3,6,4,5,1,0,2,7 --> Attacking Queens Count: 5`
+   `Index : 4  --> Board: 6,5,2,1,7,4,0,3 --> Attacking Queens Count: 5`
 
 ## Implementation
 
