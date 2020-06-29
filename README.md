@@ -37,6 +37,7 @@ Index : 4  --> Board: 6,5,2,1,7,4,0,3 --> Attacking Queens Count: 5
    An arrangement of 8 queens on a board. This is equivalent to an Individual (or a Gene) in Genetic Algorithm 
     
    Attributes: 
+   
         positions  --> the representation list as mentioned above implemented as a List.        
         attackingqueens --> list of positions of queens which are attacking  implemented as a List.        
         attackcount --> the number of queens that are attacking another queens. This will serve as a fitness indicator. For any solution of the problem, the attackcount = 0.
@@ -46,6 +47,7 @@ Index : 4  --> Board: 6,5,2,1,7,4,0,3 --> Attacking Queens Count: 5
    A Population is a list of arrangements (Boards).  This is equivalent to Population in Genetic Algorithm . Implemented as a list of Board objects.
 
    Attributes: 
+   
         size -->  number of boards in the population
         population --> a collection of boards, each board representing an arrangement of eight queens
         fitnessscore --> an overall fitness score of the population - implemented as the minimum value of the number of attacking queens among all the boards
@@ -69,12 +71,13 @@ Index : 4  --> Board: 6,5,2,1,7,4,0,3 --> Attacking Queens Count: 5
                        if the fitness score (attackscore) of the children are better (lower) than the weakest individuals
               
    Attributes:  
-      genpopulation - A population of the generation
-      generation - A state of the population in the genetic algorithm cycle. Represented as a number. Initial gen = 1
-                    attacking queens among all the boards. If a fitnessscore = 0 for a population, it implies at 
-                    least one solution is found
-      fittestparent1 - a Board object in the population which has the lowest value of attack score. Considered to be fittest parent
-      fittestparent2 - a Board object in the population which has the 2nd lowest value of attack score. Considered to be second fittest parent
+      
+         genpopulation - A population of the generation
+         generation - A state of the population in the genetic algorithm cycle. Represented as a number. Initial gen = 1
+                       attacking queens among all the boards. If a fitnessscore = 0 for a population, it implies at 
+                       least one solution is found
+         fittestparent1 - a Board object in the population which has the lowest value of attack score. Considered to be fittest parent
+         fittestparent2 - a Board object in the population which has the 2nd lowest value of attack score. Considered to be second fittest parent
         
 
 ### Logic of determining attacks using native Numpy Matrix Operations ( WITHOUT USING FOR LOOPS )
