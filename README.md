@@ -53,8 +53,9 @@ Index : 4  --> Board: 6,5,2,1,7,4,0,3 --> Attacking Queens Count: 5
 
 3. **Generation**
 
-   Generation is a driver class which runs the steps of the Genetic Algorithm Flow 
-              This class has the methods for each step in a Genetic Algorithm
+   Generation is a driver class which runs the steps of the Genetic Algorithm Flow    
+   This class has the methods for each step in a Genetic Algorithm
+              
               Step 1 - Initialize a random population of a given size. This is the first generation. 
               Step 2 - Generate fitness score of the population for the current generation
               Step 3 - Until the desired fitness score of the generation is reached (which is Zero for this implementation)
