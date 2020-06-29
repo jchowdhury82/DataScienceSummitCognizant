@@ -9,8 +9,7 @@ Find a solution of the Eight Queens problem with optimization using Genetic Algo
 
 Following are sample configurations - 
 
-
-
+![Alt Text](/boards_examples.png)
 
 ### Problem Formulation
 The arrangement of the Eight Queens on a chessboard is a list of 8 integers, all between 0 and 7 both inclusive.
